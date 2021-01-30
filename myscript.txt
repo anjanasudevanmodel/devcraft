@@ -1,0 +1,30 @@
+function main() {
+  const courses= getCoursesFromSpreadsheet();
+  console.log(courses);
+  const responses = courses.map(course=>{
+    const resource=createCourseResource(course);
+    console.log(resource);
+    const response = Classroom.Courses.create(resource);
+    
+    return response;
+    
+  })
+  
+}
+
+function getCoursesFromSpreadsheet(){
+ 
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+  const data = sheet.getDataRange().getValues();
+  data.shift();
+  return data.filter(row=>row!==null);
+}
+function createCourseResource(course){
+  const [Coursename,Instructor,mail] = course;
+  const resource = Classroom.newCourse();
+  resource.name = Coursename;
+  resource.ownerId = 'me';
+  resource.description = Instructor;
+  return resource;
+
+}
