@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="index.css" />
+    <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -66,6 +67,15 @@
               </ul>
             </li>
           </ul>
+          <div class="dropdown">
+          <button class="dropbtn" href="threelines.png">
+            <i class="fa fa-caret-down">Menu</i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">CHAT</a>
+            <a href="#">VIDEO CALL</a>          
+          </div>
+        </div>
         </div>
       </div>
     </nav>
@@ -77,6 +87,13 @@
             <a href="https://classroom.google.com/c/MjYyMzI3ODIwMTY0?cjc=uzvolsj">Python</a>
         </li>
     </ul>
+    <div id="calendar-container">
+            <div id="calendar-header">
+                <span id="calendar-month-year"></span>
+            </div>
+            <div id="calendar-dates">
+            </div>
+        </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
